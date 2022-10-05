@@ -1,0 +1,13 @@
+# This task merges all the configuration fragments into one file
+# In this example it merges the common.conf.part and main.conf.part
+# into the junos.conf file.
+# If merging the files results in a new file being created then a handler
+# is triggered to push the config onto the device. See ./handler/main.yaml
+# for more information
+- name: Apply configuration
+  hosts: all
+  connection: local
+  gather_facts: no
+  tasks:
+    - name: assembling configfurations
+      assemble: src={{ build_dir }} dest={{ junos_conf }}
