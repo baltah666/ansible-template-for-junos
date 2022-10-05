@@ -1,0 +1,111 @@
+# The 'all' group is the top of the hierarchy. The ':children' suffix
+# means that the lines below are also groups, rather than hostnames.
+# This 'all' group contains all the hosts for both sites.
+[all:children]
+site1
+site2
+
+# 'site1' contains all the devices in that site organised by device type
+# This enables a group variable file not only for this site but also for each
+# of the devices within that site.
+[site1:children]
+site1_mx
+site1_qfabric
+site1_srx
+
+# This is the same as 'site1'
+[site2:children]
+site2_mx
+site2_qfx
+site2_ex
+site2_srx
+
+# This group lists hosts. In this example MX's provide connectivity between
+# sites. The group name uses the format of <location>_<platoform> as it makes
+# it clearer what is being applied where in the playbooks
+# Just specify the hostname - not the FQDN
+[site1_mx]
+core1.site1
+core2.site1
+
+# This is the same as 'site1_mx'
+[site1_qfabric]
+switch1.site1
+
+# This is the same as 'site1_mx'
+[site1_srx]
+firewall1.site1
+firewall2.site1
+
+# This is the same as 'site1_mx'
+[site2_mx]
+core1.site2
+core2.site2
+
+# This is the same as 'site1_mx'
+[site2_qfx]
+aggregation1.site2
+aggregation2.site2
+#automation-1.site2
+#automation-2.site2
+
+# This is the same as 'site1_mx'
+[site2_ex]
+leaf1.site2
+leaf2.site2
+leaf3.site2
+leaf4.site2
+
+# This is the same as 'site1_mx'
+[site2_srx]
+firewall1.site2
+firewall2.site2
+
+# Creating this group allows for a platform specific group variable file.
+# With this we can put all platform specific - but site independent - 
+# information in one location.
+# By referencing a group - rather than putting the hostnames - minimises the
+# risk of a host being mised from this group.
+[mx:children]
+site1_mx
+site2_mx
+
+# This is the same as 'mx'
+[qfabric:children]
+site1_qfabric
+
+# This is the same as 'mx'
+[qfx:children]
+site2_qfx
+
+# This is the same as 'mx'
+[ex:children]
+site2_ex
+
+# This is the same as 'mx'
+[srx:children]
+site1_srx
+site2_srx
+
+# You can also define variables for a group. This is an alternative to defining
+# variables in a group_vars file. To demonstrate this each of the platform
+# group variables will be defined this way. The site group varaibles are 
+# defined using a group_vars file
+[mx:vars]
+netconf_port=830
+
+# This is the same as 'mx'
+[qfabric:vars]
+netconf_port=22
+
+# This is the same as 'mx'
+[qfx:vars]
+netconf_port=830
+
+# This is the same as 'mx'
+[ex:vars]
+netconf_port=830
+
+# This is the same as 'mx'
+[srx:vars]
+netconf_port=830
