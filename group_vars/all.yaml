@@ -1,5 +1,5 @@
-build_dir: /var/tmp/build-2/{{ inventory_hostname }}/tmp
-junos_conf: /var/tmp/build-2/{{ inventory_hostname }}/junos.conf
+build_dir: /var/tmp/build-3/{{ inventory_hostname }}/tmp
+junos_conf: /var/tmp/build-3/{{ inventory_hostname }}/junos.conf
 
 global:
   root_hash: $1$btoLD1Va$aBSDs6xHaZcCmR3PtGg4i/
