@@ -13,22 +13,22 @@ host:
       ip: 10.2.2.1
       mask: 31
   firewall_interfaces:
-    ge-1/0/0:
+    xe-0/0/2:
       ip: 10.2.3.0
       mask: 31
-    ge-1/0/1:
+    xe-0/0/3:
       ip: 10.2.3.2
       mask: 31
   leaf_interfaces:
-    ge-2/0/0:
+    xe-0/0/4:
       ip: 10.2.3.4
       mask: 31
-    ge-2/0/1:
+    xe-0/0/5:
       ip: 10.2.3.6
       mask: 31
-    ge-ge-2/0/2:
+    xe-xe-0/0/6:
       ip: 10.2.3.8
       mask: 31
-    ge-2/0/3:
+    xe-0/0/7:
       ip: 10.2.3.10
       mask: 31
