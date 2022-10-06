@@ -44,8 +44,11 @@ core2.site2
 
 # This is the same as 'site1_mx'
 [site2_qfx]
-aggregation1.site2
-aggregation2.site2
+#aggregation1.site2
+#aggregation2.site2
+automation-1.site2
+automation-2.site2
+
 #automation-1.site2
 #automation-2.site2
 

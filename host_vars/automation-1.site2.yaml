@@ -6,10 +6,10 @@ host:
     ip: 192.168.254.7
     mask: 32
   uplinks:
-    ge-0/0/0:
+    xe-0/0/0:
       ip: 10.2.1.1
       mask: 31
-    ge-0/0/1:
+    xe-0/0/1:
       ip: 10.2.2.1
       mask: 31
   firewall_interfaces:
