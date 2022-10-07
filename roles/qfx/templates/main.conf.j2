@@ -12,6 +12,7 @@ interfaces {
       }
     }
   }
+}
   interfaces {
     {% for ifd, int in host.uplinks.items() %}
     {{ ifd }} {
@@ -41,4 +42,4 @@ interfaces {
     }
     {% endfor %}
   }
-}
+
