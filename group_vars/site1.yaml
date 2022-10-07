@@ -16,7 +16,7 @@ location:
     - 10.0.1.8
   snmp:
     location: "Site 1"
-    contact: John Doe
+    contact: Abdulilah Baltah
     polling:
       - community: SuperSecret
         clients: 10.0.1.0/24

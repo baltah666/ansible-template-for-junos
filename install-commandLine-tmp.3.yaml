@@ -1,7 +1,7 @@
 ---
 - name: Install Configuration File from Templet
   hosts:
-    - all
+    - qfx
   roles:
     - Juniper.junos
   connection: local
