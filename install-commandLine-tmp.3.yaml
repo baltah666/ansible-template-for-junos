@@ -1,7 +1,7 @@
 ---
-- name: Install Configuration File
+- name: Install Configuration File from Templet
   hosts:
-    - automation-1.site2
+    - all
   roles:
     - Juniper.junos
   connection: local
@@ -17,7 +17,7 @@
 
   tasks:
 
-    - name: install set file onto device
+    - name: install config file onto device
       juniper_junos_config:
         provider: "{{ connection_settings }}"
         src: "{{ junos_conf }}"
