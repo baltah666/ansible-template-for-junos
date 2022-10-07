@@ -112,3 +112,7 @@ netconf_port=830
 # This is the same as 'mx'
 [srx:vars]
 netconf_port=830
+
+[all:vars]
+username=root
+password=Juniper

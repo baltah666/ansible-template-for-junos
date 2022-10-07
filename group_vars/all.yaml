@@ -2,5 +2,5 @@ build_dir: /var/tmp/build-5/{{ inventory_hostname }}/tmp
 junos_conf: /var/tmp/build-5/{{ inventory_hostname }}/junos.conf
 
 global:
-  root_hash: $1$btoLD1Va$aBSDs6xHaZcCmR3PtGg4i/
+  root_hash: $6$thEK4Kke$RKvY91MNhS74SzhpkJzd8Tx3EhFSPPpAa2mOT05G1a87A9c1/gpyLrW.odQdZaaw/9QgtE27JGkERE9JKdWav1
   login_message: This is the property of Example Corp. Do not login without express permission.

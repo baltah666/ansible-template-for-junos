@@ -1,0 +1,44 @@
+---
+- name: Install Configuration File
+  hosts:
+    - automation-1.site2
+  roles:
+    - Juniper.junos
+  connection: local
+  gather_facts: no
+
+  vars:
+    connection_settings:
+      host: "{{ ansible_host }}"
+      user: "{{ username }}"
+      passwd: "{{ password }}"
+      port: 22
+      timeout: 120
+
+  tasks:
+
+    - name: install set file onto device
+      juniper_junos_config:
+        provider: "{{ connection_settings }}"
+        src: "{{ junos_conf }}"
+        load: replace
+#        src: "base1.set"
+        comment: install-set.yaml playbook -- load base1.set file
+        confirmed: 5
+        diff: yes
+        ignore_warning: yes
+      register: config_results
+#      notify: confirm previous commit
+
+    - name: show configuration change
+      debug:
+        var: config_results.diff_lines
+      when: config_results.diff_lines is defined
+
+#  handlers:
+#    - name: confirm previous commit
+#      juniper_junos_config:
+#        provider: "{{ connection_settings }}"
+#        comment: "playbook base-settings.yaml, confirming previous commit"
+#        commit: yes
+#        diff: no
